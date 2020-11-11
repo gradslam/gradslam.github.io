@@ -4,10 +4,11 @@ layout: default
 
 # About
 
-gradslam is an open-source framework providing differentiable building blocks for simultaneous localization and mapping (SLAM) systems.
+gradslam is an open-source framework providing differentiable building blocks for simultaneous localization and mapping (SLAM) systems. We enable the usage of dense SLAM subsystems from the comfort of [PyTorch](https://pytorch.org).
 
 
 > Code available at [our GitHub repository](https://github.com/gradslam/gradslam)
+> A longer technical report of our ICRA 2020 paper is available [here](https://arxiv.org/abs/1910.10672)
 
 <div style="text-align:center">
 
@@ -30,7 +31,7 @@ In this work, we present gradSLAM, a differentiable computational graph take on 
 This is achieved by creating differentiable alternatives for each non-differentiable component in a typical dense SLAM system. Specifically, we demonstrate how to design differentiable trust-region optimizers, surface measurement and fusion schemes, as well as differentiate over rays, without sacrificing performance. This amalgamation of dense SLAM with computational graphs enables us to backprop all the way from 3D maps to 2D pixels, opening up new possibilities in gradient-based learning for SLAM.
 
 
-## Available SLAM systems
+# Differentiable SLAM components
 
 gradslam is a fully differentiable dense SLAM framework. It provides a repository of differentiable building blocks for a dense SLAM system, such as differentiable nonlinear least squares solvers, differentiable ICP (iterative closest point) techniques, differentiable raycasting modules, and differentiable mapping/fusion blocks. One can use these blocks to construct SLAM systems that allow gradients to flow all the way from the outputs of the system (map, trajectory) to the inputs (raw color/depth images, parameters, calibration, etc.).
 
@@ -46,7 +47,7 @@ Specifically, we implement differentiable versions three classical dense SLAM sy
 </div>
 
 
-## Qualitative results
+# Qualitative results
 
 The differentiable SLAM systems perform quite similarly to the non-differentiable counterparts, while allowing for gradients to flow right through. This makes gradSLAM attractively poised to be used in gradient-based learning systems.
 
@@ -76,7 +77,7 @@ Further, we have evaluated gradslam on the TUM RGB-D benchmark, as well as on an
 </div>
 
 
-### Paper
+# Paper
 
 <div style="text-align:center">
 
@@ -90,7 +91,7 @@ alt="Click to access the preprint."/></a>
 <b>An earlier version of this paper has been presented at the international conference on robotics and automation (ICRA), 2020. </b>
 
 
-### Citing us
+# Citing us
 
 If you would like to cite us, you could use the following BibTeX entry.
 
@@ -103,11 +104,11 @@ If you would like to cite us, you could use the following BibTeX entry.
 }
 ```
 
-### Correspondence
+# Correspondence
 
 If you need to discuss any further, or seek clarifications on implementation detail, correspondence is encouraged to [Krishna Murthy](https://krrish94.github.io), [Soroush Saryazdi](https://github.com/saryazdi), [Ganesh Iyer](https://epiception.github.io/), or [Liam Paull](http://liampaull.ca). Also, we would like to hear more from anyone working on similar ideas.
 
 
-### Acknowledgements
+# Acknowledgements
 
 The authors are grateful to the wonderful help from several people, including, but not limited to, [Gunshi Gupta](https://gunshi.github.io), [Ankur Handa](https://ankurhanda.github.io/), [Bhairav Mehta](https://bhairavmehta95.github.io), [Mark Van der Merwe](https://mvandermerwe.github.io/), [Aaditya Saraiya](https://www.ri.cmu.edu/ri-people/aaditya-saraiya/), [Parv Parkhiya](https://www.ri.cmu.edu/ri-people/parv-parkhiya/), [Akshit Gandhi](https://www.ri.cmu.edu/ri-people/akshit-kishor-gandhi/), [Shubham Garg](https://www.ri.cmu.edu/ri-people/shubham-garg/), [Tejas Khot](https://tejaskhot.github.io), [Gautham Swaminathan](https://www.ri.cmu.edu/ri-people/swaminathan-gurumurthy/), [Zeeshan Zia](http://zeeshanzia.com), [Ronald Clark](http://ronnieclark.co.uk), and [Sajad Saeedi](https://www.sajad-saeedi.ca/).
