@@ -2,24 +2,39 @@
 layout: default
 ---
 
-# gradslam: Dense SLAM meets automatic differentiation
+# About
+
+gradslam is an open-source framework providing differentiable building blocks for simultaneous localization and mapping (SLAM) systems.
+
+
+> Code available at [our GitHub repository](https://github.com/gradslam/gradslam)
+
+<div style="text-align:center">
+
+    <img src="{{ site.baseurl }}/images/pointfusiondemo.gif" />
+
+</div>
+
+
+## Abstract
+
+<div style="text-align:center">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2ygtSJTmo08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
 
 > The question of "representation" is central in the context of dense simultaneous localization and mapping (SLAM). Newer learning-based approaches have the potential to leverage data or task performance to directly inform the choice of representation. However, learning representations for SLAM has been an open question, because traditional SLAM systems are not end-to-end differentiable.
 In this work, we present gradSLAM, a differentiable computational graph take on SLAM. Leveraging the automatic differentiation capabilities of computational graphs, gradSLAM enables the design of SLAM systems that allow for gradient-based learning across each of their components, or the system as a whole.
 This is achieved by creating differentiable alternatives for each non-differentiable component in a typical dense SLAM system. Specifically, we demonstrate how to design differentiable trust-region optimizers, surface measurement and fusion schemes, as well as differentiate over rays, without sacrificing performance. This amalgamation of dense SLAM with computational graphs enables us to backprop all the way from 3D maps to 2D pixels, opening up new possibilities in gradient-based learning for SLAM.
 
 
-### Explanatory video
+## Available SLAM systems
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2ygtSJTmo08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+gradslam is a fully differentiable dense SLAM framework. It provides a repository of differentiable building blocks for a dense SLAM system, such as differentiable nonlinear least squares solvers, differentiable ICP (iterative closest point) techniques, differentiable raycasting modules, and differentiable mapping/fusion blocks. One can use these blocks to construct SLAM systems that allow gradients to flow all the way from the outputs of the system (map, trajectory) to the inputs (raw color/depth images, parameters, calibration, etc.).
 
-
-
-### About gradSLAM
-
-gradSLAM is a fully differentiable dense SLAM framework. It provides a repository of differentiable building blocks for a dense SLAM system, such as differentiable nonlinear least squares solvers, differentiable ICP (iterative closest point) techniques, differentiable raycasting modules, and differentiable mapping/fusion blocks. One can use these blocks to construct SLAM systems that allow gradients to flow all the way from the outputs of the system (map, trajectory) to the inputs (raw color/depth images, parameters, calibration, etc.).
-
-Specifically, we implement differentiable versions three classical dense SLAM systems using the gradSLAM framework: KinectFusion, PointFusion, ICP-SLAM. We choose these because
+Specifically, we implement differentiable versions three classical dense SLAM systems using the gradslam framework: KinectFusion, PointFusion, ICP-SLAM. We choose these because
 * Each of these approaches sparked a new line-of-research in dense SLAM
 * The approaches themselves are fairly simple from an algorithmic standpoint
 * We aim to provide differentiable SLAM solutions for a wide variety of 3D representations (voxels, surfels, points).
@@ -30,7 +45,8 @@ Specifically, we implement differentiable versions three classical dense SLAM sy
 
 </div>
 
-### Qualitative results
+
+## Qualitative results
 
 The differentiable SLAM systems perform quite similarly to the non-differentiable counterparts, while allowing for gradients to flow right through. This makes gradSLAM attractively poised to be used in gradient-based learning systems.
 
@@ -50,7 +66,7 @@ More qualitative results, this time, on the ScanNet dataset.
 
 </div>
 
-Further, we have evaluated gradSLAM on the TUM RGB-D benchmark, as well as on an in-house sequence captured from an Intel RealSense D435 camera.
+Further, we have evaluated gradslam on the TUM RGB-D benchmark, as well as on an in-house sequence captured from an Intel RealSense D435 camera.
 
 <div style="text-align:center">
     <img src="{{ site.baseurl }}/images/tum.gif" />
