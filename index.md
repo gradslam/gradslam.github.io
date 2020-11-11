@@ -17,7 +17,7 @@ gradslam is an open-source framework providing differentiable building blocks fo
 </div>
 
 
-## Abstract
+# Abstract
 
 <div style="text-align:center">
 
