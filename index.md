@@ -8,6 +8,7 @@ gradslam is an open-source framework providing differentiable building blocks fo
 
 
 > Code available at [our GitHub repository](https://github.com/gradslam/gradslam)
+
 > A longer technical report of our ICRA 2020 paper is available [here](https://arxiv.org/abs/1910.10672)
 
 <div style="text-align:center">
